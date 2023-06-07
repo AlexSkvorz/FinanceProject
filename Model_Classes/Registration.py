@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore
 from PyQt5.QtWidgets import QWidget, QLineEdit
 from Ui_Classes import Ui_RegistrationWindow
 
@@ -12,19 +12,6 @@ class RegistrationWindow(QWidget):
         self.ui.setupUi(self)
 
         self.database = database
-
-        self.ui.newRegistrationButton.clicked.connect(self.registration_user)
-
-        # передаем сигнал checkBox
-        self.ui.newPasswordCheckBox.stateChanged.connect(self.show_password)
-        self.ui.newPasswordCheckBox2.stateChanged.connect(self.show_again_password)
-
-        # исходное состояние checkBox и lineEdit
-        self.ui.newPasswordCheckBox.setChecked(False)
-        self.ui.newPasswordLineEdit.setEchoMode(QLineEdit.Password)
-
-        self.ui.newPasswordCheckBox2.setChecked(False)
-        self.ui.newPasswordLineEdit2.setEchoMode(QLineEdit.Password)
 
     def registration_user(self):
         new_login = self.ui.newLoginLineEdit.text()

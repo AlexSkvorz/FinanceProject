@@ -20,29 +20,6 @@ class FinanceWindow(QMainWindow):
         self.user_id = user_id
         self.selected_row = -1
 
-        self.create_incomes_table()
-        self.create_expenses_table()
-        self.fix_date_edits()
-        self.get_user_name()
-
-        self.ui.saveIncomesButton.clicked.connect(self.add_new_income)
-        self.ui.saveExpensesButton.clicked.connect(self.add_new_expense)
-
-        self.ui.incomesTableWidget.setContextMenuPolicy(Qt.CustomContextMenu)
-        self.ui.incomesTableWidget.customContextMenuRequested.connect(self.incomes_context_menu_requested)
-
-        self.ui.expensesTableWidget.setContextMenuPolicy(Qt.CustomContextMenu)
-        self.ui.expensesTableWidget.customContextMenuRequested.connect(self.expenses_context_menu_requested)
-
-        self.ui.sortIncomesCombobox.currentIndexChanged.connect(self.incomes_date_sort)
-        self.ui.sortExpensesCombobox.currentIndexChanged.connect(self.expenses_date_sort)
-
-        self.ui.viewFirstDateEdit.dateChanged.connect(self.incomes_date_sort)
-        self.ui.viewSecondDateEdit.dateChanged.connect(self.incomes_date_sort)
-
-        self.ui.viewFirstDateEdit_2.dateChanged.connect(self.expenses_date_sort)
-        self.ui.viewSecondDateEdit_2.dateChanged.connect(self.expenses_date_sort)
-
     def create_incomes_table(self):
         incomes_data = self.database.get_user_incomes(self.user_id)
 

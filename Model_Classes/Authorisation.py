@@ -14,17 +14,6 @@ class AuthorisationWindow(QWidget):
 
         self.database = database
 
-        self.ui.authorisationButton.clicked.connect(self.authorisation_user)
-        self.ui.registrationButton.clicked.connect(self.clear_login_password)
-        self.ui.forgotPasswordButton.clicked.connect(self.clear_login_password)
-
-        # передаем сигнал checkBox
-        self.ui.passwordCheckBox.stateChanged.connect(self.show_password)
-
-        # исходное состояние checkBox и lineEdit
-        self.ui.passwordCheckBox.setChecked(False)
-        self.ui.passwordLineEdit.setEchoMode(QLineEdit.Password)
-
     def authorisation_user(self):
         login = self.ui.loginLineEdit.text()
         password = self.ui.passwordLineEdit.text()

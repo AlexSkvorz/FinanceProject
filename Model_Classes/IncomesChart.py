@@ -17,11 +17,6 @@ class IncomesWindow(QWidget):
         self.user_id = user_id
         self.flag = flag
 
-        self.ui.chartFirstDateEdit.dateChanged.connect(self.send_date)
-        self.ui.chartSecondDateEdit.dateChanged.connect(self.send_date)
-
-        self.fix_date_edits()
-
     def fix_date_edits(self):
         current_date = QDate.currentDate()
         self.ui.chartFirstDateEdit.setDate(QDate(1753, 9, 14))

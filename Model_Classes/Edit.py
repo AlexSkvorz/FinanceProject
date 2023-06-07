@@ -15,15 +15,6 @@ class EditWindow(QDialog):
 
         self.info = info
 
-        self.fill_combobox()
-        self.fill_before_info()
-        self.fix_date()
-
-        self.ui.editButtonBox.button(QtWidgets.QDialogButtonBox.Ok).setText('Сохранить')
-        self.ui.editButtonBox.button(QtWidgets.QDialogButtonBox.Cancel).setText('Отменить')
-
-        self.ui.editButtonBox.accepted.connect(self.check_fields)
-
     def fill_combobox(self):
         incomes_categories = ['Зарплата', 'Премия', 'Инвестиционные доходы', 'Подарок']
         expenses_categories = ['Продукты', 'Бытовые товары', 'Оплата ЖКХ', 'Связь и интернет', 'Транспорт',

@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QLineEdit
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore
 from Ui_Classes import Ui_ForgotPasswordWindow
 
 
@@ -13,17 +13,6 @@ class ForgotPasswordWindow(QWidget):
         self.ui.setupUi(self)
 
         self.database = database
-
-        self.ui.forgotPasswordButton.clicked.connect(self.recovery_password)
-
-        self.ui.forgotPasswordCheckBox.stateChanged.connect(self.show_password)
-        self.ui.forgotPasswordCheckBox2.stateChanged.connect(self.show_again_password)
-
-        self.ui.forgotPasswordCheckBox.setChecked(False)
-        self.ui.forgotPasswordLineEdit.setEchoMode(QLineEdit.Password)
-
-        self.ui.forgotPasswordCheckBox2.setChecked(False)
-        self.ui.forgotPasswordLineEdit2.setEchoMode(QLineEdit.Password)
 
     def recovery_password(self):
         login = self.ui.forgotLoginLineEdit.text()

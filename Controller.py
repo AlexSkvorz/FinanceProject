@@ -47,39 +47,37 @@ class Controller:
             self.authorisation_window.auth_success.connect(self.on_authorisation_success)
 
     def run_registration_window(self):
-        if not self.registration_window:
-            self.registration_window = RegistrationWindow(self.database)
-            self.registration_window.show()
+        self.registration_window = RegistrationWindow(self.database)
+        self.registration_window.show()
 
-            # Настройка сигналов и слотов для элементов интерфейса
-            self.registration_window.ui.newRegistrationButton.clicked.connect(self.
+        # Настройка сигналов и слотов для элементов интерфейса
+        self.registration_window.ui.newRegistrationButton.clicked.connect(self.
                                                                               registration_window.registration_user)
-            self.registration_window.ui.newPasswordCheckBox.stateChanged.connect(self.registration_window.show_password)
-            self.registration_window.ui.newPasswordCheckBox2.stateChanged.connect(
-                self.registration_window.show_again_password)
-            self.registration_window.ui.newPasswordCheckBox.setChecked(False)
-            self.registration_window.ui.newPasswordLineEdit.setEchoMode(QLineEdit.Password)
-            self.registration_window.ui.newPasswordCheckBox2.setChecked(False)
-            self.registration_window.ui.newPasswordLineEdit2.setEchoMode(QLineEdit.Password)
+        self.registration_window.ui.newPasswordCheckBox.stateChanged.connect(self.registration_window.show_password)
+        self.registration_window.ui.newPasswordCheckBox2.stateChanged.connect(
+            self.registration_window.show_again_password)
+        self.registration_window.ui.newPasswordCheckBox.setChecked(False)
+        self.registration_window.ui.newPasswordLineEdit.setEchoMode(QLineEdit.Password)
+        self.registration_window.ui.newPasswordCheckBox2.setChecked(False)
+        self.registration_window.ui.newPasswordLineEdit2.setEchoMode(QLineEdit.Password)
 
         self.registration_window.closed.connect(self.on_registration_window_closed)
 
     def run_forgot_password_window(self):
-        if not self.forgot_password_window:
-            self.forgot_password_window = ForgotPasswordWindow(self.database)
-            self.forgot_password_window.show()
+        self.forgot_password_window = ForgotPasswordWindow(self.database)
+        self.forgot_password_window.show()
 
-            # Настройка сигналов и слотов для элементов интерфейса
-            self.forgot_password_window.ui.forgotPasswordButton.clicked.connect(
-                self.forgot_password_window.recovery_password)
-            self.forgot_password_window.ui.forgotPasswordCheckBox.stateChanged.connect(
-                self.forgot_password_window.show_password)
-            self.forgot_password_window.ui.forgotPasswordCheckBox2.stateChanged.connect(
-                self.forgot_password_window.show_again_password)
-            self.forgot_password_window.ui.forgotPasswordCheckBox.setChecked(False)
-            self.forgot_password_window.ui.forgotPasswordLineEdit.setEchoMode(QLineEdit.Password)
-            self.forgot_password_window.ui.forgotPasswordCheckBox2.setChecked(False)
-            self.forgot_password_window.ui.forgotPasswordLineEdit2.setEchoMode(QLineEdit.Password)
+        # Настройка сигналов и слотов для элементов интерфейса
+        self.forgot_password_window.ui.forgotPasswordButton.clicked.connect(
+            self.forgot_password_window.recovery_password)
+        self.forgot_password_window.ui.forgotPasswordCheckBox.stateChanged.connect(
+            self.forgot_password_window.show_password)
+        self.forgot_password_window.ui.forgotPasswordCheckBox2.stateChanged.connect(
+            self.forgot_password_window.show_again_password)
+        self.forgot_password_window.ui.forgotPasswordCheckBox.setChecked(False)
+        self.forgot_password_window.ui.forgotPasswordLineEdit.setEchoMode(QLineEdit.Password)
+        self.forgot_password_window.ui.forgotPasswordCheckBox2.setChecked(False)
+        self.forgot_password_window.ui.forgotPasswordLineEdit2.setEchoMode(QLineEdit.Password)
 
         self.forgot_password_window.closed.connect(self.on_forgot_password_window)
 

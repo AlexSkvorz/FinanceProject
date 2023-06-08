@@ -46,3 +46,11 @@
 
 Диаграмма формируется на основе существующих доходов/расходов пользователя в режиме "реального" времени. 
 
+## **Сделано с помощью**
++ Python
++ PyQt5
++ Sqlite3
+
+## **Автор**
++ Telegram - [AlexSkvorz](https://t.me/AlexSkvorz)
++ VK - [AlexSkvorz](https://vk.com/alexskvorz)
